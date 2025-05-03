@@ -1,0 +1,16 @@
+<div class="container">
+    <h2>Excel File Uploader</h2>
+  
+    <div class="file-group">
+      <label>Upload First Excel File</label>
+      <input type="file" (change)="onFileChange($event, 1)" accept=".xlsx, .xls" />
+    </div>
+  
+    <div class="file-group">
+      <label>Upload Second Excel File</label>
+      <input type="file" (change)="onFileChange($event, 2)" accept=".xlsx, .xls" />
+    </div>
+  
+    <button class="process-btn" (click)="processFiles()" [disabled]="!file1 || !file2">Process</button>
+    <button class="download-btn" (click)="downloadOutput()" [disabled]="!outputData">Download Output</button>
+  </div>

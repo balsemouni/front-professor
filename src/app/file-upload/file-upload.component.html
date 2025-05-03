@@ -1,0 +1,21 @@
+<div class="file-upload-container" (drop)="onFileDropped($event)" (dragover)="onDragOver($event)" (dragleave)="onDragLeave($event)">
+    <div class="upload-area" [class.drag-over]="isDragging">
+      <input type="file" #fileInput (change)="onFileSelected($event)" style="display: none;">
+      
+      <p *ngIf="!isDragging">Choose a file or drag it here</p>
+      <p *ngIf="isDragging">
+        <mat-icon>cloud_upload</mat-icon> Drop the file now
+      </p>
+      <p *ngIf="Dragged">
+        <mat-icon>insert_drive_file</mat-icon> File is being dragged
+      </p>
+      
+      <button mat-raised-button color="primary" (click)="fileInput.click()">Select File</button>
+    </div>
+  
+    <div class="file-info" *ngIf="selectedFile">
+      <p>Selected file: {{ selectedFile.name }}</p>
+      <p>Size: {{ selectedFile.size | fileSize }}</p>
+    </div>
+  </div>
+  

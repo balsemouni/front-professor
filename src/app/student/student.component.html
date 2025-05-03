@@ -1,0 +1,103 @@
+
+<!-- Add this link inside the <head> tag of your index.html -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <div class="grid-container">
+
+  <!-- Sidebar -->
+  <aside id="sidebar">
+    <div class="sidebar-profile">
+      <div class="profile-info">
+        <span class="user-name">John Doe</span>
+        <span class="user-role">Student</span>
+      </div>
+    </div>
+
+    <ul class="sidebar-list">
+      <li class="sidebar-list-item" [class.active]="selectedMenu === ''" (click)="resetToDefaultView()">
+        <mat-icon>home</mat-icon>
+        <a>Home</a>
+      </li>
+      <li *ngFor="let item of sidebarItems" class="sidebar-list-item" [class.active]="selectedMenu === item.name" (click)="selectMenu(item.name)">
+        <mat-icon>{{ item.icon }}</mat-icon>
+        <a>{{ item.name }}</a>
+      </li>
+      <li class="sidebar-list-item last" (click)="logout()">
+        <mat-icon>logout</mat-icon>
+        <a>Logout</a>
+      </li>
+    </ul>
+  </aside>
+
+ 
+ <!-- Main Content -->
+  <main class="main-container">
+    <div *ngIf="selectedMenu === 'Books'">
+      <h2>Books</h2>
+      <p>Content related to Books...</p>
+    </div>
+  
+    <div *ngIf="selectedMenu === 'Courses'">
+      <h2>Courses</h2>
+      <app-course-list></app-course-list>
+    </div>
+  
+
+    <div *ngIf="selectedMenu === 'disponibility'">
+      <h2>Disponibility</h2>
+<app-availability-matrix></app-availability-matrix>
+</div>
+    <div *ngIf="!selectedMenu">
+      <h2>Welcome</h2>
+      <p>Select a menu to view content</p>
+   
+    <app-carousel></app-carousel> 
+
+    <div class="charts">
+      <div class="chart-card">
+        <h2>Performance</h2>
+        <div class="chart">
+          <canvasjs-chart [options]="barChartOptions"></canvasjs-chart>
+        </div>
+      </div>
+
+      <div class="chart-card">
+        <h2>Progress</h2>
+        <div class="chart">
+          <apx-chart
+            [series]="radialChartOptions.series"
+            [chart]="radialChartOptions.chart"
+            [plotOptions]="radialChartOptions.plotOptions"
+            [labels]="radialChartOptions.labels"
+            [stroke]="radialChartOptions.stroke"
+            [fill]="radialChartOptions.fill"
+          ></apx-chart>
+        </div>
+      </div>
+    </div>
+  </div>
+  </main>
+
+  <div class="right-section">
+    <div class="box">
+      <img src="Screenshot 2025-02-01 204429.png" alt="Profile Picture" class="profile-pic" />
+      <div class="profile-info">
+        <span class="user-name">John Doe</span>
+        <span class="user-email">john.doe.com</span>
+        <span class="user-filiere">Filiere: ING01</span>
+      </div>
+    </div>
+
+    <div class="notifications">
+      <h2>Notifications</h2>
+      <div class="notification-list">
+        <div class="notification" *ngFor="let notification of notifications">
+          <span class="notification-icon">🔔</span>
+          <span class="notification-text">{{ notification.message }}</span>
+          <span class="notification-time">{{ notification.time }}</span>
+        </div>
+      </div>
+    </div>
+
+   
+  </div>
+</div> 

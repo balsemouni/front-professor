@@ -1,0 +1,50 @@
+<div class="container">
+    <div class="card">
+      <h2>Hours Spent</h2>
+      <div class="legend">
+        <div class="item study">Study</div>
+        <div class="item exams">Exams</div>
+      </div>
+      <div class="chart">
+        <div class="bar" style="height: 40%;   background: linear-gradient(to top, #58BDFF, #ABE5A1); /* Green to light green */
+">
+          <span>40%</span>Jan
+        </div>
+        <div class="bar" style="height: 20%;   background: linear-gradient(to top, #58BDFF, #ABE5A1); /* Green to light green */
+">
+          <span>20%</span>Feb
+        </div>
+        <div class="bar" style="height: 60%;   background: linear-gradient(to top, #58BDFF, #ABE5A1); /* Green to light green */
+">
+          <span>60%</span>Mar
+        </div>
+        <div class="bar" style="height: 40%;   background: linear-gradient(to top, #58BDFF, #ABE5A1); /* Green to light green */
+">
+          <span>40%</span>Apr
+        </div>
+        <div class="bar" style="height: 20%;   background: linear-gradient(to top, #58BDFF, #ABE5A1); /* Green to light green */
+">
+          <span>20%</span>May
+        </div>
+      </div>
+    </div>
+
+    <div>
+        <div id="card">
+            <div id="chart">
+              <apx-chart
+                [series]="chartOptions.series"
+                [chart]="chartOptions.chart"
+                [plotOptions]="chartOptions.plotOptions"
+                [labels]="chartOptions.labels"
+                [stroke]="chartOptions.stroke"
+                [fill]="chartOptions.fill"
+              ></apx-chart>
+            </div>
+          </div>
+      </div>
+      
+    
+    
+  </div>
+  

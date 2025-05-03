@@ -1,0 +1,18 @@
+<p>course-list works!</p>
+<h2>Liste des matières</h2>
+<table>
+  <thead>
+    <tr>
+      <th>Code</th>
+      <th>Nom du cours</th>
+      <th>Nombre de fichiers</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let course of courses">
+      <td>{{ course.code }}</td>
+      <td>{{ course.name }}</td>
+      <td>{{ course.files }}</td>
+    </tr>
+  </tbody>
+</table>

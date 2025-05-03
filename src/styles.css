@@ -1,1 +1,21 @@
 /* You can add global styles to this file, and also import other style files */
+/* src/styles.css */
+:root {
+    --primary-color: #4CAF50; /* Green */
+    --secondary-color: #2196F3; /* Blue */
+    --accent-color: #FFC107; /* Amber */
+    --background-color: #f9f9f9;
+    --sidebar-background: #F3F3F3;
+    --text-color: rgb(70, 71, 81);
+    --text-light: #666;
+    --shadow-color: rgba(0, 0, 0, 0.1);
+    --white: #fff;
+    --side-bar-color:#F2F2F2;
+    --black:#000;
+    ;
+  }
+  
+  /* Other global styles can go here */
+  
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

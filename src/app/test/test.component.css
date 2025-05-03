@@ -1,0 +1,115 @@
+.container {
+    display: flex;
+    gap: 2rem; /* Space between the cards */
+    justify-content: space-between; /* Distribute cards evenly */
+  }
+  
+  .card {
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 6px 7px -4px rgba(0, 0, 0, 0.2);
+    width: 20rem;
+    height: 20rem; /* Define height for the card */
+  }
+  
+  .legend {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+  }
+  
+  .item {
+    width: 10rem;
+
+    font-size: 1rem;
+    color: #333;
+  }
+  
+  .chart {
+    /* background-color: aqua; */
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-end; /* Align bars to the bottom */
+    height: 100%; /* Make sure the chart fills the card height */
+  }
+  #card {
+    background: #fff;
+    max-width: 650px;
+    margin: 35px auto;
+    padding: 0px;
+    text-align: center;
+  }
+  
+  h2 {
+    font-size: 18px;
+    margin-bottom: 0;
+    color: rgb(192, 192, 192);
+  }
+  h1 {
+    font-size: 22px;
+    margin-top: 0;
+    color: #333;
+  }
+  
+  .footer {
+    position: absolute;
+    bottom: 16px;
+    left: 0;
+    right: 0;
+    font-size: 14px;
+    text-align: center;
+  }
+  
+  .doughnut-chart-container {
+    position: relative;
+    width: 10rem;
+    height: 10rem;
+    background-color: #ddd;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }  .bar {
+    width: 20%; /* Adjust width to create space between bars */
+    background-color: #4CAF50; /* Color of the bars */
+    margin: 0 0.5rem; /* Space between bars */
+    text-align: center;
+    color: white;
+    font-size: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end; /* Align text at the bottom */
+    position: relative;
+  }
+  
+  .bar span {
+    position: absolute;
+        bottom: 70%;
+    width: 100%;
+  }
+  
+  .gauge {
+    position: relative;
+    width: 10rem;
+    height: 10rem;
+    background-color: #ddd;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .needle {
+    width: 2px;
+    height: 40px;
+    background-color: red;
+    transform-origin: 50% 100%;
+    transform: rotate(45deg); /* Adjust this to control the needle's rotation */
+  }
+  
+  .value {
+    font-size: 1.5rem;
+    position: absolute;
+  }
+  

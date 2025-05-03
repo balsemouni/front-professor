@@ -1,0 +1,28 @@
+<div class="main-container">
+  <h2>Mark Your Availability</h2>
+  <form (ngSubmit)="submitAvailability()">
+    <table class="availability-table">
+      <thead>
+        <tr>
+          <th>Day</th>
+          <th *ngFor="let slot of timeSlots">{{ slot }}</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let day of days">
+          <td>{{ day }}</td>
+          <td *ngFor="let slot of timeSlots">
+            <input
+              type="checkbox"
+              [(ngModel)]="availability[day][slot]"
+              name="{{ day + '-' + slot }}"
+            />
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <button type="submit" class="submit-btn" [disabled]="loading">
+      {{ loading ? 'Submitting...' : 'Submit' }}
+    </button>
+  </form>
+</div>

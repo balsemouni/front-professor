@@ -1,0 +1,63 @@
+<div class="container">
+  <h1>Grades Page</h1>
+
+  <!-- Filters Section -->
+  <div class="filters">
+    <!-- Search Input -->
+    <div>
+      <div class="input-container">
+        <i class="fas fa-search"></i>
+        <input
+          type="text"
+          [(ngModel)]="searchText"
+          placeholder="Search by course or assignment"
+          class="input-field"
+        />
+      </div>
+    </div>
+
+    <!-- Course Dropdown -->
+    <div>
+      <div class="select-container">
+        <i class="fas fa-book"></i>
+        <select [(ngModel)]="selectedCourse" class="select-field">
+          <option value="">Select Course</option>
+          <option *ngFor="let course of courses" [value]="course">{{ course }}</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- Clear Filters Button -->
+    <button class="clear-btn" (click)="clearFilters()">
+      <i class="fas fa-times"></i> Clear Filters
+    </button>
+  </div>
+
+  <!-- Grades Table -->
+  <table class="grades-table">
+    <thead>
+      <tr>
+        <th>Course</th>
+        <th>Assignment</th>
+        <th>Grade</th>
+        <th>Percentage</th>
+        <th>Feedback</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let grade of filteredGrades">
+        <td><i class="fas fa-book-open"></i> {{ grade.course }}</td>
+        <td><i class="fas fa-tasks"></i> {{ grade.assignment }}</td>
+        <td><i class="fas fa-star"></i> {{ grade.grade }}</td>
+        <td><i class="fas fa-chart-line"></i> {{ grade.percentage }}%</td>
+        <td><i class="fas fa-comment"></i> {{ grade.feedback || "No feedback" }}</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- Footer with Progress Bar -->
+  <div class="footer">
+    <p><span>Progress:</span> {{ progress }}%</p>
+    <div class="progress-bar" [style.width]="progress + '%'"></div>
+  </div>
+</div>
